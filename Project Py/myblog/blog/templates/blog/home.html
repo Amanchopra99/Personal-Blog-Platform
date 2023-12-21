@@ -1,0 +1,18 @@
+<!-- blog/templates/blog/home.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+</head>
+<body>
+    <h1>Welcome to My Blog</h1>
+    {% for post in posts %}
+        <h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
+        <p>{{ post.content }}</p>
+    {% endfor %}
+</body>
+</html>
+
